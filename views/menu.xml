@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+    <menuitem id="hospital_root"
+              name="Hospital"
+              web_icon="m_eprescription,static/description/icon.png"
+              sequence="12"/>
+    <menuitem id="hospital_eprescription_root"
+              name="E-Prescription"
+              parent="hospital_root"
+              action="eprescription_action"
+              sequence="12"/>
+    <menuitem id="hospital_conf_root"
+              name="Configurations"
+              parent="hospital_root"
+              sequence="15"/>
+    <menuitem id="hospital_query_root"
+              name="Queries"
+              parent="hospital_root"
+              sequence="15"/>
+    <menuitem id="hospital_delete_root"
+              name="Delete"
+              parent="hospital_root"
+              sequence="15"/>
+    <menuitem id="hospital_confirmation_root"
+              name="Confirmations"
+              parent="hospital_root"
+              sequence="15"/>
+
+
+</odoo>

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<odoo>
+
+    <record id="ilac_tree" model="ir.ui.view">
+        <field name="name">hospital.ilac.tree</field>
+        <field name="model">hospital.ilac</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="barcode"/>
+                <field name="ilac_adi"/>
+                <field name="etkin_madde_kodu"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="ilac_form" model="ir.ui.view">
+        <field name="name">hospital.ilac.form</field>
+        <field name="model">hospital.ilac</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <div class="oe_title">
+                        <h1>
+                            <field name="barcode" readonly="True"/>
+                        </h1>
+                    </div>
+                    <group>
+                        <field name="barcode"/>
+                        <field name="ilac_adi"/>
+                        <field name="sgk_ilac_kodu"/>
+                        <field name="ambalaj_miktari"/>
+                        <field name="tek_doz_miktari"/>
+                        <field name="kutu_birim_miktari"/>
+                        <field name="ayaktan_odenme_sarti"/>
+                        <field name="yatan_odenme_sarti"/>
+                        <field name="etkin_madde_kodu"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="ilac_action">
+        <field name="name">İlaçlar</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">hospital.ilac</field>
+        <field name="view_mode">tree,kanban,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                İlk ilacını oluştur!
+            </p>
+        </field>
+    </record>
+
+    <menuitem id="hospital_ilacDVO"
+              name="İlaçlar"
+              parent="hospital_conf_root"
+              action="ilac_action"
+              sequence="12"/>
+
+
+</odoo>
+
