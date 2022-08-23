@@ -2,29 +2,52 @@
 <odoo>
 
     <menuitem id="hospital_root"
-              name="Hospital"
+              name="Hastane"
               web_icon="m_eprescription,static/description/icon.png"
               sequence="12"/>
     <menuitem id="hospital_eprescription_root"
-              name="E-Prescription"
+              name="E-Reçete"
               parent="hospital_root"
               action="eprescription_action"
               sequence="12"/>
-    <menuitem id="hospital_conf_root"
-              name="Configurations"
+    <menuitem id="hospital_ereport_root"
+              name="E-Rapor"
               parent="hospital_root"
-              sequence="15"/>
+              action="ereport_action"
+              sequence="12"/>
     <menuitem id="hospital_query_root"
-              name="Queries"
+              name="Sorgulamalar"
               parent="hospital_root"
               sequence="15"/>
     <menuitem id="hospital_delete_root"
-              name="Delete"
+              name="Sil"
               parent="hospital_root"
               sequence="15"/>
     <menuitem id="hospital_confirmation_root"
               name="Confirmations"
               parent="hospital_root"
+              sequence="15"/>
+    <menuitem id="hospital_conf_root"
+              name="Ayarlar"
+              parent="hospital_root"
+              sequence="15"/>
+
+    <!-- Alt Başlıklar -->
+    <menuitem id="hospital_query_epres_root"
+              name="E-Reçete"
+              parent="hospital_query_root"
+              sequence="15"/>
+    <menuitem id="hospital_query_ereport_root"
+              name="E-Rapor"
+              parent="hospital_query_root"
+              sequence="15"/>
+    <menuitem id="hospital_query_ilac_root"
+              name="İlaçlar"
+              parent="hospital_query_root"
+              sequence="15"/>
+    <menuitem id="hospital_query_other_root"
+              name="Diğer"
+              parent="hospital_query_root"
               sequence="15"/>
 
 

@@ -31,8 +31,8 @@
     </record>
 
     <menuitem id="hospital_query_eprescription_list"
-              name="Query E-Prescription List"
-              parent="hospital_query_root"
+              name="E-Reçete Liste Sorgula"
+              parent="hospital_query_epres_root"
               action="query_eprescription_list_action"
               sequence="15"/>
 

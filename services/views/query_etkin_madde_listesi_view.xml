@@ -30,8 +30,8 @@
     </record>
 
     <menuitem id="hospital_query_etkin_madde_listesi"
-              name="Query Etkin Madde Listesi"
-              parent="hospital_query_root"
+              name="Etkin Madde Listesi Sorgula"
+              parent="hospital_query_other_root"
               action="etkin_madde_listesi_action"
               sequence="17"/>
 

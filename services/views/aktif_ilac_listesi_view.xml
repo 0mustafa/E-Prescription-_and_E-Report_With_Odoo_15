@@ -31,8 +31,8 @@
     </record>
 
     <menuitem id="hospital_query_aktif_ilac_listesi"
-              name="Query Aktif İlaç Listesi"
-              parent="hospital_query_root"
+              name="Aktif İlaç Listesi Sorgula"
+              parent="hospital_query_ilac_root"
               action="aktif_ilac_listesi_action"
               sequence="16"/>
 

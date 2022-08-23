@@ -198,11 +198,7 @@
         </field>
     </record>
 
-    <menuitem id="hospital_ereport_root"
-              name="E-Report"
-              parent="hospital_root"
-              action="ereport_action"
-              sequence="12"/>
+
 
 
 </odoo>

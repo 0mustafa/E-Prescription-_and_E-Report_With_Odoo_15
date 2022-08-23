@@ -31,8 +31,8 @@
     </record>
 
     <menuitem id="hospital_query_turuncu_ilac_listesi"
-              name="Query turuncu Reçete İlaç Listesi"
-              parent="hospital_query_root"
+              name="Turuncu Reçete İlaç Listesi Sorgula"
+              parent="hospital_query_ilac_root"
               action="turuncu_ilac_listesi_action"
               sequence="16"/>
 

@@ -31,8 +31,8 @@
     </record>
 
     <menuitem id="hospital_unfinished_medicine_query"
-              name="Unfinished Medicine"
-              parent="hospital_query_root"
+              name="Kullanımı Bitmemiş İlaç Sorgula"
+              parent="hospital_query_other_root"
               action="query_unfinished_medicine_action"
               sequence="15"/>
 

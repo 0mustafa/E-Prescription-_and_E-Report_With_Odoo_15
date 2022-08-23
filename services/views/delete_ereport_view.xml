@@ -31,7 +31,7 @@
     </record>
 
     <menuitem id="hospital_delete_ereport"
-              name="Delete E-Report"
+              name="E-Rapor Sil"
               parent="hospital_delete_root"
               action="delete_ereport_action"
               sequence="15"/>

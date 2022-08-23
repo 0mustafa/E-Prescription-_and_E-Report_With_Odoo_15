@@ -31,9 +31,9 @@
     </record>
 
     <menuitem id="hospital_query_ereport"
-              name="Query E-Report"
-              parent="hospital_query_root"
+              name="E-Rapor Sorgula"
+              parent="hospital_query_ereport_root"
               action="query_ereport_action"
-              sequence="16"/>
+              sequence="14"/>
 
 </odoo>

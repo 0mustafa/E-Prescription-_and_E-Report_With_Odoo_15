@@ -31,8 +31,8 @@
     </record>
 
     <menuitem id="hospital_query_normal_ilac_listesi"
-              name="Query Normal Reçete İlaç Listesi"
-              parent="hospital_query_root"
+              name="Normal Reçete İlaç Listesi Sorgula"
+              parent="hospital_query_ilac_root"
               action="normal_ilac_listesi_action"
               sequence="16"/>
 
