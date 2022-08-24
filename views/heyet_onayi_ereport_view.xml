@@ -15,13 +15,13 @@
             </p>
         </field>
     </record>
-
+<!--
     <menuitem id="hospital_committee_confirmation"
               name="Committee Confirmation"
               parent="hospital_confirmation_root"
               action="heyet_onayi_ereport_action"
               sequence="15"/>
 
-
+-->
 </odoo>
 

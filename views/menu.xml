@@ -9,24 +9,26 @@
               name="E-Reçete"
               parent="hospital_root"
               action="eprescription_action"
-              sequence="12"/>
+              sequence="13"/>
     <menuitem id="hospital_ereport_root"
               name="E-Rapor"
               parent="hospital_root"
               action="ereport_action"
-              sequence="12"/>
+              sequence="13"/>
     <menuitem id="hospital_query_root"
-              name="Sorgulamalar"
+              name="Sorgula"
               parent="hospital_root"
-              sequence="15"/>
+              sequence="14"/>
     <menuitem id="hospital_delete_root"
               name="Sil"
               parent="hospital_root"
-              sequence="15"/>
+              sequence="14"/>
+    <!--
     <menuitem id="hospital_confirmation_root"
               name="Confirmations"
               parent="hospital_root"
               sequence="15"/>
+    -->
     <menuitem id="hospital_conf_root"
               name="Ayarlar"
               parent="hospital_root"

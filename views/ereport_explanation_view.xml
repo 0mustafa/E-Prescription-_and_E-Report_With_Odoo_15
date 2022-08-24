@@ -44,11 +44,6 @@
         </field>
     </record>
 
-    <menuitem id="hospital_ereport_explanation"
-              name="E-Report Explanations"
-              parent="hospital_conf_root"
-              action="ereport_explanation_action"
-              sequence="12"/>
 
 </odoo>
 

@@ -112,6 +112,6 @@ class SaveEprescription(models.Model):
             'view_mode': 'form',
             'context': {
                 'default_sonuc_kodu': erecete.sonucKodu,
-                'default_sonuc_mesaji': erecete.sonucMesaji,
+                'default_sonuc_mesaji': erecete.sonucMesaji if erecete.sonucKodu != '0000' else 'İşlem Başarılı!',
             }
         }

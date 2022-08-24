@@ -186,6 +186,28 @@
         </field>
     </record>
 
+    <record id="ereport_search" model="ir.ui.view">
+        <field name="name">hospital.ereport.search</field>
+        <field name="model">hospital.ereport</field>
+        <field name="arch" type="xml">
+            <search>
+                <filter name="filter_taslak" string="Taslak" domain="[('state', '=', 'taslak')]"/>
+                <filter name="filter_heyet_onayinda" string="Heyet Onayında" domain="[('state', '=', 'heyet_onayinda')]"/>
+                <filter name="filter_bashekim_onayinda" string="Başhekim Onayında" domain="[('state', '=', 'bashekim_onayinda')]"/>
+                <filter name="filter_onaylandi" string="Onaylandı" domain="[('state', '=', 'onaylandi')]"/>
+                <filter name="filter_onaylanmadi" string="Onaylanmadı" domain="[('state', '=', 'onaylanmadi')]"/>
+                <filter name="filter_silindi" string="Silindi" domain="[('state', '=', 'silindi')]"/>
+                <separator/>
+                <group expand="0" string="Group By">
+                    <filter name="group_by_state" string="Durum" context="{'group_by':'state'}"/>
+                </group>
+                <searchpanel>
+                    <field name="state" enable_counters="1" icon="fa-file"/>
+                </searchpanel>
+            </search>
+        </field>
+    </record>
+
     <record model="ir.actions.act_window" id="ereport_action">
         <field name="name">E-Raporlar</field>
         <field name="type">ir.actions.act_window</field>

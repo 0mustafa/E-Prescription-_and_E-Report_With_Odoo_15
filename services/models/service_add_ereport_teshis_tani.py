@@ -15,7 +15,7 @@ class AddEreportTeshisTani(models.Model):
 
     teshis_id = fields.Integer()
     doctor_id = fields.Many2one('hospital.doctor', string="Doktor")
-    tani_lines = fields.Many2many('hospital.ereport.tani', string="Tanı Listesi")
+    tani_lines = fields.Many2many('hospital.diagnosis', string="Tanı Listesi")
 
     def add_teshis_tani(self):
         wsdl = "https://sgkt.sgk.gov.tr/medula/eczane/saglikTesisiRaporIslemleriWS?wsdl"

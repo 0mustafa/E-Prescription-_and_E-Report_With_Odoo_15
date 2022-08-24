@@ -9,8 +9,8 @@
             <tree>
                 <field name="etkin_madde_kodu" string="Etkin Madde Kodu"/>
                 <field name="etkin_madde_adi"/>
-                <field name="etkin_madde_icerik_miktari"/>
                 <field name="etkin_madde_formu"/>
+                <field name="etkin_madde_icerik_miktari"/>
             </tree>
         </field>
     </record>
@@ -38,7 +38,7 @@
     </record>
 
     <record model="ir.actions.act_window" id="etkin_maddedvo_action">
-        <field name="name">E-Rapor Etkin Maddedvo</field>
+        <field name="name">E-Rapor Etkin Madde Kodları</field>
         <field name="type">ir.actions.act_window</field>
         <field name="res_model">hospital.etkin_maddedvo</field>
         <field name="view_mode">tree,kanban,form</field>
@@ -50,7 +50,7 @@
     </record>
 
     <menuitem id="hospital_etkin_maddedvo"
-              name="E-Rapor Etkin Maddedvo"
+              name="E-Rapor Etkin Madde Kodları"
               parent="hospital_conf_root"
               action="etkin_maddedvo_action"
               sequence="12"/>

@@ -39,7 +39,7 @@ class EReport(models.Model):
     rapor_doktor_listesi2 = fields.One2many('ereport.doctor.line', 'ereport_id', string="E-Rapor Doktor Listesi")
     rapor_etkin_madde_listesi = fields.Many2many('hospital.etkin_madde', string="E-Rapor Etkin Madde Listesi")
     rapor_aciklama_listesi = fields.One2many('hospital.ereport.explanation', 'ereport_id', string="E-Rapor Açıklama Listesi")
-    rapor_tani_listesi = fields.Many2many('hospital.ereport.tani', string="E-Rapor Tanı Listesi")
+    rapor_tani_listesi = fields.Many2many('hospital.diagnosis', string="E-Rapor Tanı Listesi")
     rapor_ilave_deger_listesi2 = fields.One2many('hospital.ereport.ilave_deger', 'ereport_id', string="E-Rapor İlave Değer Listesi")
 
     state = fields.Selection([
@@ -78,4 +78,4 @@ class EreportTeshisLine(models.Model):
     rapor_teshis_kodu = fields.Many2one('hospital.ereport.teshis', string="Teşhis Kodu")
     baslangic_tarihi = fields.Date(string="Başlangıç Tarihi", date_format="dd.MM.yyyy")
     bitis_tarihi = fields.Date(string="Bitiş Tarihi", date_format="dd.MM.yyyy")
-    tani_listesi = fields.Many2many('hospital.ereport.tani')
+    tani_listesi = fields.Many2many('hospital.diagnosis')

@@ -56,11 +56,6 @@
         </field>
     </record>
 
-    <menuitem id="hospital_medicine"
-              name="Medicine"
-              parent="hospital_conf_root"
-              action="medicine_action"
-              sequence="12"/>
 
 
 

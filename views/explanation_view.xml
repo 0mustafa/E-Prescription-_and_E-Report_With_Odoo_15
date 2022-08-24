@@ -44,11 +44,5 @@
         </field>
     </record>
 
-    <menuitem id="hospital_explanation"
-              name="Explanations"
-              parent="hospital_conf_root"
-              action="explanation_action"
-              sequence="12"/>
-
 </odoo>
 

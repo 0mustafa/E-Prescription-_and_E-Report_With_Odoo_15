@@ -47,7 +47,7 @@
     </record>
 
     <record model="ir.actions.act_window" id="epatient_action">
-        <field name="name">Patients</field>
+        <field name="name">Hastalar</field>
         <field name="type">ir.actions.act_window</field>
         <field name="res_model">hospital.epatient</field>
         <field name="view_mode">tree,kanban,form</field>
@@ -59,10 +59,10 @@
     </record>
 
     <menuitem id="hospital_epatient"
-              name="Patients"
+              name="Hastalar"
               parent="hospital_conf_root"
               action="epatient_action"
-              sequence="12"/>
+              sequence="10"/>
 
 
 

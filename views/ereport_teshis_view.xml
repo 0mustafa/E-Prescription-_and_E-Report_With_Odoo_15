@@ -34,7 +34,7 @@
     </record>
 
     <record model="ir.actions.act_window" id="ereport_teshis_action">
-        <field name="name">E-Rapor Teshis</field>
+        <field name="name">E-Rapor Teşhisler</field>
         <field name="type">ir.actions.act_window</field>
         <field name="res_model">hospital.ereport.teshis</field>
         <field name="view_mode">tree,kanban,form</field>
@@ -46,10 +46,10 @@
     </record>
 
     <menuitem id="hospital_ereport_teshis"
-              name="E-Report Teshis"
+              name="E-Rapor Teşhisler"
               parent="hospital_conf_root"
               action="ereport_teshis_action"
-              sequence="12"/>
+              sequence="11"/>
 
 </odoo>
 

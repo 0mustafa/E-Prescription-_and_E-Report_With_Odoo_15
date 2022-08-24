@@ -20,7 +20,7 @@ class AddEreportTeshis(models.Model):
     # teshis_lines = fields.One2many('ereport.add.teshis.line', 'service_add_ereport_teshis', string="Teşhis Listesi")
     teshis_lines = fields.Many2many('hospital.ereport.teshis')
     teshis_lines2 = fields.One2many('ereport.teshis.line', 'ereport_id', string="Teshis Listesi")
-    teshis_tani = fields.Many2many('hospital.ereport.tani', string="Teşhis Tanıları")
+    teshis_tani = fields.Many2many('hospital.diagnosis', string="Teşhis Tanıları")
 
     def add_teshis(self):
         wsdl = "https://sgkt.sgk.gov.tr/medula/eczane/saglikTesisiRaporIslemleriWS?wsdl"
@@ -91,12 +91,12 @@ class EreportAddTeshisLine(models.Model):
     rapor_teshis_kodu = fields.Many2one('hospital.ereport.teshis', string="Teşhis Kodu")
     baslangic_tarihi = fields.Date(string="Başlangıç Tarihi", date_format="dd.MM.yyyy")
     bitis_tarihi = fields.Date(string="Bitiş Tarihi", date_format="dd.MM.yyyy")
-    tani_listesi = fields.Many2many('hospital.ereport.tani', string="Tanı Listesi")
+    tani_listesi = fields.Many2many('hospital.diagnosis', string="Tanı Listesi")
 
 
 class EreportAddTeshisTaniLine(models.Model):
     _name = "ereport.add.teshis.tani.line"
 
-    tani_id = fields.Many2one('hospital.ereport.tani')
+    tani_id = fields.Many2one('hospital.diagnosis')
     tani_kodu = fields.Char(string="Tanı Kodu", related="tani_id.tani_kodu")
     tani_adi = fields.Char(string="Tanı Adı", related="tani_id.tani_adi")

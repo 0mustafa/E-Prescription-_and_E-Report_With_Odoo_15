@@ -49,11 +49,6 @@
         </field>
     </record>
 
-    <menuitem id="hospital_ereport_tani"
-              name="E-Report Diagnoises"
-              parent="hospital_conf_root"
-              action="ereport_tani_action"
-              sequence="12"/>
 
 
 

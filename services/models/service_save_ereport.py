@@ -150,6 +150,6 @@ class SaveEreport(models.Model):
             'view_mode': 'form',
             'context': {
                 'default_sonuc_kodu': erapor.sonucKodu,
-                'default_sonuc_mesaji': erapor.sonucMesaji,
+                'default_sonuc_mesaji': erapor.sonucMesaji if erapor.sonucKodu != '0000' else 'İşlem Başarılı!',
             }
         }
