@@ -46,7 +46,7 @@ class SaveEprescription(models.Model):
                 'kullanimDoz2': i.kullanim_doz2,
                 'kullanimPeriyot': i.kullanim_periyot,
                 'kullanimPeriyotBirimi': int(i.kullanim_periyot_birimi),
-                'geriOdemeKapsaminda': 'E' if i.geri_odeme_kapsami == 'evet' else 'H',
+                'geriOdemeKapsaminda': '',
                 'ereceteIlacAciklamaListesi': pharmacy_line_vals_erecete_ilac_aciklama_listesi
             })
 

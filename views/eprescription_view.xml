@@ -65,6 +65,8 @@
                     </group>
                     <group string="Doktor Bilgileri">
                         <field name="doctor_id" attrs="{'readonly':[('erecete_no','not in',False)]}"/>
+                        <field name="doctor_name" attrs="{'readonly':[('erecete_no','not in',False)]}"/>
+                        <field name="doctor_surname" attrs="{'readonly':[('erecete_no','not in',False)]}"/>
                         <field name="brans_kod" attrs="{'readonly':[('erecete_no','not in',False)]}"/>
                     </group>
                     <group string="Detaylar">
@@ -101,7 +103,7 @@
                                         string="Açıklama Ekle" type="action"
                                         class="oe_highlight" context="{'default_pharmacy_line_id':active_id}"/>
                                 <group>
-                                    <field name="eprescription_id"/>
+                                    <field name="eprescription_id" invisible="True"/>
                                     <field name="product_id"/>
                                     <field name="medicine_name"/>
                                     <field name="quantity"/>
@@ -147,7 +149,7 @@
     </record>
 
     <record model="ir.actions.act_window" id="eprescription_action">
-        <field name="name">Eprescriptions</field>
+        <field name="name">E-Reçeteler</field>
         <field name="type">ir.actions.act_window</field>
         <field name="res_model">hospital.eprescription</field>
         <field name="view_mode">tree,kanban,form</field>

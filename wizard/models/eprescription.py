@@ -57,7 +57,7 @@ class EPrescriptionWizard(models.TransientModel):
 
     today = fields.Date(string='Tarih', default=fields.Date.context_today, date_format="dd.MM.yyyy")
 
-    pharmacy_line_ids = fields.One2many('eprescription.pharmacy.lines', 'eprescription_id', string="Pharmacy Lines", required=True)
+    pharmacy_line_ids = fields.One2many('eprescription.pharmacy.lines2', 'eprescription_id', string="Pharmacy Lines", required=True)
     explanation_line_ids = fields.One2many('eprescription.explanation.lines', 'eprescription_id',
                                            string="Explanation Lines", required=True)
 

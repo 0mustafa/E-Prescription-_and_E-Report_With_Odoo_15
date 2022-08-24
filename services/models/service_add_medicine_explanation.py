@@ -25,7 +25,7 @@ class AddMedicineExplanation(models.Model):
         wsdl = "https://sgkt.sgk.gov.tr/medula/eczane/saglikTesisiReceteIslemleriWS?wsdl"
         client = Client(wsdl=wsdl, wsse=UsernameToken('99999999990', '99999999990'))
 
-        pharmacy_line = self.env['eprescription.pharmacy.lines'].search([('id', '=', self.pharmacy_line_id)])
+        pharmacy_line = self.env['eprescription.pharmacy.lines2'].search([('id', '=', self.pharmacy_line_id)])
         eprescription = self.env['hospital.eprescription'].search([('id', '=', pharmacy_line.eprescription_id.id)])
 
         medicine_explanation_list = []

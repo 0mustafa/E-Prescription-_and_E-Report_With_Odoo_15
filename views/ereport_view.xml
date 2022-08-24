@@ -13,9 +13,9 @@
                 <field name="patient_surname"/>
                 <field name="state" string="Durum"
                        decoration-info="state == 'taslak'"
-                       decoration-warning="state == 'heyet_onayinda', 'bashekim_onayinda'"
+                       decoration-warning="state in ('heyet_onayinda', 'bashekim_onayinda')"
                        decoration-success="state == 'onaylandi'"
-                       decoration-danger="state == 'onaylanmadi', 'silindi'"
+                       decoration-danger="state in ('onaylanmadi', 'silindi')"
                        widget="badge"/>
             </tree>
         </field>
@@ -28,12 +28,13 @@
             <form>
                 <header>
                     <button name="%(m_eprescription.save_ereport_action)d" string="Medulaya Gönder" type="action"
-                            class="oe_highlight" context="{'default_ereport_id':active_id}"/>
+                            class="oe_highlight" context="{'default_ereport_id':active_id}"
+                            attrs="{'invisible': [('state', 'not in', ('silindi','taslak'))]}"/>
                     <button name="send_to_confirmation" string="Onaya Gönder" type="object"
                             class="oe_highlight"
-                            attrs="{'invisible': [('state', '==', 'heyet_onayinda'), ('state', '==', 'bashekim_onayinda')]}"/>
+                            attrs="{'invisible': ['|',('rapor_duzenleme_turu', '==', '2'), ('state', '==', 'taslak')]}"/>
                     <button name="%(m_eprescription.confirm_ereport_action)d" string="Onayla" type="action"
-                            class="oe_highlight" attrs="{'invisible': [('state', '!=', 'heyet_onayinda')]}"
+                            class="oe_highlight" attrs="{'invisible': ['|',('rapor_duzenleme_turu', '==', '2'), ('state', '==', 'taslak')]}"
                             context="{'default_ereport_id':active_id}"/>
                     <button name="%(m_eprescription.add_ereport_explanation_action)d" string="Açıklama Ekle"
                             type="action"
@@ -67,7 +68,7 @@
                         <group>
                             <field name="rapor_no" attrs="{'readonly':[('rapor_takip_no','!=', False)]}"/>
                             <field name="rapor_duzenleme_turu" attrs="{'readonly':[('rapor_takip_no','!=', False)]}"/>
-                            <field name="rapor_onay_durumu" attrs="{'readonly':[('rapor_takip_no','!=', False)]}"/>
+                            <field name="rapor_onay_durumu" readonly="1"/>
                         </group>
                     </group>
                     <group string="Hasta Bilgileri">
@@ -186,7 +187,7 @@
     </record>
 
     <record model="ir.actions.act_window" id="ereport_action">
-        <field name="name">ereports</field>
+        <field name="name">E-Raporlar</field>
         <field name="type">ir.actions.act_window</field>
         <field name="res_model">hospital.ereport</field>
         <field name="view_mode">tree,kanban,form</field>

@@ -62,7 +62,7 @@ class QueryEprescription(models.Model):
                     })
                 medicines_list.append({
                     'eprescription_id': eprescription.id,
-                    'product_id': self.env['hospital.medicine'].search([('barcode', '=', medicine.barkod)]).id,
+                    'product_id': self.env['hospital.ilac'].search([('barcode', '=', medicine.barkod)]).id,
                     'kullanim_sekli': medicine.kullanimSekli,
                     'kullanim_doz1': medicine.kullanimDoz1,
                     'kullanim_doz2': medicine.kullanimDoz2,

@@ -28,7 +28,7 @@ class EReport(models.Model):
     rapor_onay_durumu = fields.Selection([
         ('1', 'Onay Bekliyor'),
         ('2', 'Onaylandı')
-    ], string="Rapor Onay Durumu", required=True)
+    ], string="Rapor Onay Durumu", default='1')
 
     rapor_olusturan_doktor = fields.Many2one('hospital.doctor', string="Raporu Oluşturan Doktor")
     doctor_name = fields.Char(string="Doktor Adı", related="rapor_olusturan_doktor.name")

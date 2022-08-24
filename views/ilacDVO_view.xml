@@ -14,6 +14,17 @@
         </field>
     </record>
 
+    <record id="ilac_search" model="ir.ui.view">
+        <field name="name">hospital.ilac.search</field>
+        <field name="model">hospital.ilac</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="ilac_adi" string="İlaç Adı"/>
+                <field name="barcode" string="İlaç Barkod"/>
+            </search>
+        </field>
+    </record>
+
     <record id="ilac_form" model="ir.ui.view">
         <field name="name">hospital.ilac.form</field>
         <field name="model">hospital.ilac</field>

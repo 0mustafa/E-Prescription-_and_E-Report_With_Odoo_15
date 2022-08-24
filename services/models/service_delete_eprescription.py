@@ -38,15 +38,15 @@ class DeleteEprescription(models.Model):
             eprescription = self.env['hospital.eprescription'].search([('erecete_no', '=', self.erecete_no)])
             eprescription.erecete_no = False
             eprescription.state = 'silindi'
-        else:
-            return {
-                'name': 'Sonuç Mesajı',
-                'type': 'ir.actions.act_window',
-                'res_model': 'sonuc.mesaji.wizard',
-                'target': 'new',
-                'view_mode': 'form',
-                'context': {
-                    'default_sonuc_kodu': erecete.sonucKodu,
-                    'default_sonuc_mesaji': erecete.sonucMesaji,
-                }
+
+        return {
+            'name': 'Sonuç Mesajı',
+            'type': 'ir.actions.act_window',
+            'res_model': 'sonuc.mesaji.wizard',
+            'target': 'new',
+            'view_mode': 'form',
+            'context': {
+                'default_sonuc_kodu': erecete.sonucKodu,
+                'default_sonuc_mesaji': erecete.sonucMesaji if erecete.sonucKodu != '0000' else 'İşlem Başarılı'
             }
+        }

@@ -135,7 +135,12 @@ class SaveEreport(models.Model):
 
         if erapor.sonucKodu == '0000':
             ereport.rapor_takip_no = erapor.eraporDVO.raporTakipNo
-            ereport.state = 'heyet_onayinda'
+            if ereport.rapor_duzenleme_turu == '2':     # uzman hekim
+                ereport.rapor_onay_durumu = '2'
+                ereport.state = 'onaylandi'
+            else:
+                ereport.rapor_onay_durumu = '1'         # heyet
+                ereport.state = 'heyet_onayinda'
 
         return {
             'name': 'Sonuç Mesajı',

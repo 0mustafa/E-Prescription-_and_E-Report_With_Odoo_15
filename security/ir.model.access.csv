@@ -9,7 +9,7 @@ access.hospital.ereport.tani,access_hospital_ereport_tani,model_hospital_ereport
 access.hospital.etkin_madde,access_hospital_etkin_madde,model_hospital_etkin_madde,base.group_user,1,1,1,1
 access.hospital.etkin_maddedvo,access_hospital_etkin_maddedvo,model_hospital_etkin_maddedvo,base.group_user,1,1,1,1
 access.hospital.ereport.teshis,access_hospital_ereport_teshis,model_hospital_ereport_teshis,base.group_user,1,1,1,1
-access.eprescription.pharmacy.lines,access_eprescription_pharmacy_lines,model_eprescription_pharmacy_lines,base.group_user,1,1,1,1
+access.eprescription.pharmacy.lines2,access_eprescription_pharmacy_lines2,model_eprescription_pharmacy_lines2,base.group_user,1,1,1,1
 access.eprescription.explanation.lines,access_eprescription_explanation_lines,model_eprescription_explanation_lines,base.group_user,1,1,1,1
 access.eprescription.explanation.lines.wizard,access_eprescription_explanation_lines_wizard,model_eprescription_explanation_lines_wizard,base.group_user,1,1,1,1
 access.eprescription.medicine.explanation.lines,access_eprescription_medicine_explanation_lines,model_eprescription_medicine_explanation_lines,base.group_user,1,1,1,1

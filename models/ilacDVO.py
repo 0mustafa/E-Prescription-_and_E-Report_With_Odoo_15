@@ -27,3 +27,10 @@ class IlacDVO(models.Model):
         ('3', 'Ödenmez')
     ], string="Yatan Ödenme Şartı")
     etkin_madde_kodu = fields.Char(string="Etkin Madde Kodu")
+
+    def name_get(self):
+        result = []
+        for rec in self:
+            name = rec.barcode + ' : ' + rec.ilac_adi
+            result.append((rec.id, name))
+        return result

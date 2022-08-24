@@ -59,7 +59,7 @@ class EPrescriptions(models.Model):
 
     today = fields.Date(string='Tarih', default=fields.Date.context_today, date_format="dd.MM.yyyy")
 
-    pharmacy_line_ids = fields.One2many('eprescription.pharmacy.lines', 'eprescription_id', string="Pharmacy Lines", required=True)
+    pharmacy_line_ids = fields.One2many('eprescription.pharmacy.lines2', 'eprescription_id', string="Pharmacy Lines", required=True)
     explanation_line_ids = fields.One2many('eprescription.explanation.lines', 'eprescription_id',
                                            string="Explanation Lines", required=True)
 
@@ -80,12 +80,11 @@ class EPrescriptions(models.Model):
 
 # İlaç ekle
 class AppointmentPharmacyLines(models.Model):
-    _name = "eprescription.pharmacy.lines"
+    _name = "eprescription.pharmacy.lines2"
     _description = "E-Prescription Pharmacy Lines"
 
-    product_id = fields.Many2one("hospital.medicine", string="Barkod", required=True)
-    medicine_name = fields.Char(string="İlaç Adı", related="product_id.name")
-    geri_odeme_kapsami = fields.Selection(string="Geri Ödeme Kapsamı", related="product_id.geri_odeme_kapsami")
+    product_id = fields.Many2one("hospital.ilac", string="Barkod", required=True)
+    medicine_name = fields.Char(string="İlaç Adı", related="product_id.ilac_adi")
     kullanim_sekli = fields.Integer(string="Kullanım Şekli")
     kullanim_doz1 = fields.Integer(string="Kullanım Doz 1")
     kullanim_doz2 = fields.Float(string="Kullanım Doz 2")
@@ -96,7 +95,6 @@ class AppointmentPharmacyLines(models.Model):
         ('5', 'Ayda'),
         ('6', 'Yılda')
     ], string="Kullanım Periyot Birimi")
-    price_unit = fields.Float(related="product_id.list_price")
     quantity = fields.Integer(string="Adet", default=1)
 
     explanation_line_ids = fields.One2many('eprescription.medicine.explanation.lines', 'pharmacy_line_id',
@@ -137,7 +135,7 @@ class EprescriptionsMedicineExplanationLines(models.Model):
     _name = "eprescription.medicine.explanation.lines"
     _description = "E-Prescription Medicine Explanation Lines"
 
-    pharmacy_line_id = fields.Many2one('eprescription.pharmacy.lines')
+    pharmacy_line_id = fields.Many2one('eprescription.pharmacy.lines2')
     service_medicine_exp_id = fields.Many2one('hospital.service.add.medicine.explanation')
     aciklama_turu = fields.Selection([
         ('1', 'Teşhis/Tanı'),
@@ -148,3 +146,9 @@ class EprescriptionsMedicineExplanationLines(models.Model):
         ('99', 'Diğer')
     ], string="Açıklama Türü")
     aciklama = fields.Text(string="E-Reçete Açıklaması")
+
+# KULLANILMIYOR!!!
+class AppointmentPharmacyLines2(models.Model):
+    _name = "eprescription.pharmacy.lines"
+    _description = "E-Prescription Pharmacy Lines"
+
